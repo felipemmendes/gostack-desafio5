@@ -25,9 +25,9 @@ class TransactionsRepository {
 
   public getBalance(): Balance {
     const transactionsReduced = this.transactions.reduce(
-      (acc, obj) => ({
+      (acc, { type, value }) => ({
         ...acc,
-        [obj.type]: (acc[obj.type] || 0) + obj.value,
+        [type]: (acc[type] || 0) + value,
       }),
       { income: 0, outcome: 0 },
     );
