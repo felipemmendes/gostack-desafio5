@@ -25,9 +25,9 @@ class TransactionsRepository {
 
   public getBalance(): Balance {
     const transactionsReduced = this.transactions.reduce(
-      (acc, { type, value }) => ({
-        ...acc,
-        [type]: (acc[type] || 0) + value,
+      (accumulator, { type, value }) => ({
+        ...accumulator,
+        [type]: accumulator[type] + value,
       }),
       { income: 0, outcome: 0 },
     );
@@ -35,8 +35,7 @@ class TransactionsRepository {
     const { income, outcome } = transactionsReduced;
 
     const balance = {
-      income,
-      outcome,
+      ...transactionsReduced,
       total: income - outcome,
     };
 
