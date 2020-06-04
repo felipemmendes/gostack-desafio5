@@ -8,8 +8,8 @@ Node.js and Typescript fundamentals.
 
 To complete this challenge, I needed to add the following funcionalities to the app, and pass all tests.
 
-* ``POST /transactions``: This route shoud receive title, value, and type (income or outcome) in the request body and store the transaction on a variable.
-* ``GET /transactions``: This route should list all saved transactions and return the account balance (total, incomes, outcomes);
+* ``POST /transactions``: This route shoud receive ``title``, ``value``, and ``type`` (income or outcome) in the request body and store the transaction on a variable.
+* ``GET /transactions``: This route should list all saved transactions and return the account ``balance`` (total, incomes, outcomes);
 
 ## This project uses
 
